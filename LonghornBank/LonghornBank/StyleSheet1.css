@@ -1,0 +1,119 @@
+﻿body {
+    background-color: #b200ff;
+    font-family: Arial;
+    width: 800px;
+
+    
+}
+#bottom {
+    float: left;
+    width: 100%;
+    padding: 5px;
+    vertical-align: bottom;
+    height: 35px;
+    top: 64px;
+    left: 1px;
+    position: relative;
+}
+
+#header /* "#" looks for div id and formats the div*/ {
+    position: relative;
+    vertical-align: top;
+    text-align: center;
+    width: 800px;
+    align-content: center;
+    
+}
+
+#content {
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    left: 0px;
+    height: 166px;
+    text-align: center;
+
+}
+
+#topcontent {
+    padding: 5px;
+    background-color: #FF00FF;
+    position: relative;
+    vertical-align: top;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#maincontent {
+    vertical-align: bottom;
+    position: relative;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 170px;
+    text-align: center;
+
+}
+
+#sidebar {
+    line-height: 26px;
+    position: relative;
+    width: 33%;
+    float: left;
+    text-align: left;
+    margin-right: 5px;
+}
+
+#label {
+ line-height: 26px;
+    position:relative;
+    width: 33%;
+    float: left;
+    text-align: right;
+}
+
+#textbox {
+    line-height: 26px;
+    position: relative;
+    width: 33%;
+    float: left;
+    text-align: left;
+ 
+}
+
+.textbox /* "." looks for a CssClass reference*/ {
+    width: 100px;
+    background-color: #b200ff;
+}
+
+#image {
+    line-height: 26px;
+    position: relative;
+    width: 202px;
+    float: left;
+    text-align: left;
+    margin-left:20px;
+    top: 48px;
+    height: 162px;
+    left: 331px;
+    margin-right: 5px;
+}
+
+#ShowAll {
+    line-height: 26px;
+    position: relative;
+    width: 743px;
+    float: left;
+    text-align: left;
+    margin-left:20px;
+    top: 15px;
+    height: 32px;
+    left: 10px;
+    margin-right: 5px;
+}
+
+.buttons /* This is formatting the individual buttons that call it*/ {
+    width: 100px;
+}
+
