@@ -12,5 +12,5 @@ Option Explicit On
 
 
 
-Partial Public Class ManagerHome
+Partial Public Class EmployeeHome
 End Class

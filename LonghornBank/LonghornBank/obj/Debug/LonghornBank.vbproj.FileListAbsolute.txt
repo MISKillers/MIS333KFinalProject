@@ -66,3 +66,6 @@ C:\Users\Jonathan\Desktop\Longhorn Bank\MIS333KFinalProject\LonghornBank\Longhor
 C:\Users\Jonathan\Desktop\Longhorn Bank\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.dll
 C:\Users\Jonathan\Desktop\Longhorn Bank\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.xml
 C:\Users\Jonathan\Desktop\Longhorn Bank\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.pdb
+C:\Users\clari_000\Desktop\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.Resources.resources
+C:\Users\clari_000\Desktop\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.vbproj.GenerateResource.Cache
+C:\Users\clari_000\Desktop\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.xml

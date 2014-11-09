@@ -6,6 +6,8 @@
 Imports System.Data
 Imports System.Data.SqlClient
 
+
+
 Public Class ClassCustomerDB
     'these variables are internal to object
     Dim mDatasetCustomer As New DataSet
@@ -46,6 +48,44 @@ Public Class ClassCustomerDB
         'it it matches, return true
         'else, return false
         If strPassword = mMyView(0).Item("Username").ToString Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+
+    Public Function CheckEmail(strEmail As String) As Boolean
+        'name:   CheckUsername()
+        'purpose:  check if username is correct
+        'arguments: strUserName()
+        'returns: boolean
+        'author: E. Clarissa Anjani Gondoprawiro
+
+        mMyView.RowFilter = "EmailAddr = '" & strEmail & "'"
+
+        'Check number records is 
+        'if one return true
+        'if zero return false
+        If mDatasetCustomer.Tables("tblCustomers").Rows.Count = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Public Function CheckBirthday(strPassword As String) As Boolean
+        'name: CheckPassword
+        'purpose: check if password is correct
+        'arguments: strPassword
+        'returns: boolean
+        'author: E. Clarissa Anjani Gondoprawiro
+
+        'Do not run a query here
+        'simple compare the password on the form to the password in row zero of the dataset
+        'it it matches, return true
+        'else, return false
+        If strPassword = mMyView(0).Item("DOB").ToString Then
             Return True
         Else
             Return False
@@ -144,6 +184,43 @@ Public Class ClassCustomerDB
             Throw New Exception("stored procedure is " & strName.ToString & " error is " & ex.Message)
         End Try
     End Sub
+
+    
+    Public Sub AddCustomerStoredProcedureShorterParams(mPassword, mLastname, mFirstName, mMI, mAddress, mCity, mState, mZipcode, mEmailAddr, mPhone) 'mDOB
+        ' CREATES INSTANCES OF THE CONNECTION AND COMMAND OBJECT
+        Dim objConnection As New SqlConnection(mstrConnection)
+
+        ' Tell SQL server the name of the stored procedure you will be executing
+        Dim objCommand As New SqlDataAdapter("usp_Customer_Insert", objConnection)
+        Try
+            ' SETS THE COMMAND TYPE TO "STORED PROCEDURE"
+            objCommand.SelectCommand.CommandType = CommandType.StoredProcedure
+
+            ' ADD PARAMETER(S) TO SPROC
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@password", mPassword))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@lastname", mLastname))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@firstname", mFirstName))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@MI", mMI))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@address", mAddress))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@city", mCity))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@state", mState))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@zipcode", mZipcode))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@emailaddr", mEmailAddr))
+            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@phone", mPhone))
+            'objCommand.SelectCommand.Parameters.Add(New SqlParameter("@DOB", mDOB))
+
+            ' OPEN CONNECTION AND RUN INSERT QUERY
+            objCommand.SelectCommand.Connection = objConnection
+            objConnection.Open()
+            objCommand.SelectCommand.ExecuteNonQuery()
+            objConnection.Close()
+        Catch ex As Exception
+            Throw New Exception(" error is " & ex.Message)
+        End Try
+
+    End Sub
+
+
 
 
     Public Function GetRecordID(intRecordID As Integer) As Integer

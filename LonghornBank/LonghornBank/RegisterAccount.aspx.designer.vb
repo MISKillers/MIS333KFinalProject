@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class SignUp
+Partial Public Class RegisterAccount
 
     '''<summary>
     '''Head1 control.
@@ -23,112 +23,112 @@ Partial Public Class SignUp
     Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
 
     '''<summary>
-    '''form1 control.
+    '''form2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents form2 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''txtEmail control.
+    '''chkCheckingAcc control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents chkCheckingAcc As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
-    '''txtPassword control.
+    '''txtDepositChecking control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtDepositChecking As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtFirstName control.
+    '''lblErrorChecking control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtFirstName As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblErrorChecking As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtInitial control.
+    '''chkSavingAcc control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtInitial As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents chkSavingAcc As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
-    '''txtLastName control.
+    '''txtDepositSavings control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtLastName As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtDepositSavings As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtBirthday control.
+    '''lblErrorSavings control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtBirthday As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblErrorSavings As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtAddress control.
+    '''chkIRA control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtAddress As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents chkIRA As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
-    '''txtCity control.
+    '''txtDepositIRA control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtCity As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtDepositIRA As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtState control.
+    '''lblErrorIRA control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtState As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblErrorIRA As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtZip control.
+    '''chkStock control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtZip As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents chkStock As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
-    '''txtPhone control.
+    '''lblMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPhone As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''btnSubmit control.

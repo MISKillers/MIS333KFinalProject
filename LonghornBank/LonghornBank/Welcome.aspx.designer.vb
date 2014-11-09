@@ -32,15 +32,6 @@ Partial Public Class Welcome
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''lnkSignUp control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lnkSignUp As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
     '''txtUsernameLogin control.
     '''</summary>
     '''<remarks>
@@ -86,11 +77,11 @@ Partial Public Class Welcome
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lnkForgot control.
+    '''btnForgot control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lnkForgot As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents btnForgot As Global.System.Web.UI.WebControls.Button
 End Class

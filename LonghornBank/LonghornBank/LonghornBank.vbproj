@@ -153,29 +153,33 @@
     <Content Include="DepositApproval.aspx" />
     <Content Include="DisputeResolution.aspx" />
     <Content Include="Disputes.aspx" />
+    <Content Include="EmployeeHome.aspx" />
     <Content Include="EmployeeTestMaster.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="longhornbanklogo1.jpg" />
+    <Content Include="longhornbanklogo2lowpixel.png" />
     <Content Include="ManagerHome.aspx" />
+    <Content Include="MyAccounts.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="RegisterAccount.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Transfer.aspx" />
-    <Content Include="Welcome.aspx" />
     <Content Include="CustomerMaster.Master" />
     <Content Include="EmployeeMaster.Master" />
+    <Content Include="Welcome.aspx" />
     <None Include="My Project\PublishProfiles\IROM - Classweb2.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,6 +191,7 @@
     <Compile Include="ClassCustomerDB.vb" />
     <Compile Include="ClassEmployeeDB.vb" />
     <Compile Include="ClassFormat.vb" />
+    <Compile Include="ClassValidation.vb" />
     <Compile Include="CustomerMaster.Master.designer.vb">
       <DependentUpon>CustomerMaster.Master</DependentUpon>
     </Compile>
@@ -214,6 +219,13 @@
     <Compile Include="Disputes.aspx.vb">
       <DependentUpon>Disputes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeHome.aspx.designer.vb">
+      <DependentUpon>EmployeeHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHome.aspx.vb">
+      <DependentUpon>EmployeeHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EmployeeMaster.Master.designer.vb">
       <DependentUpon>EmployeeMaster.Master</DependentUpon>
@@ -255,12 +267,26 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="MyAccounts.aspx.designer.vb">
+      <DependentUpon>MyAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyAccounts.aspx.vb">
+      <DependentUpon>MyAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterAccount.aspx.designer.vb">
+      <DependentUpon>RegisterAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterAccount.aspx.vb">
+      <DependentUpon>RegisterAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="SignUp.aspx.designer.vb">
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.vb">
       <DependentUpon>SignUp.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Transfer.aspx.designer.vb">
       <DependentUpon>Transfer.aspx</DependentUpon>
@@ -274,7 +300,7 @@
     </Compile>
     <Compile Include="Welcome.aspx.vb">
       <DependentUpon>Welcome.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

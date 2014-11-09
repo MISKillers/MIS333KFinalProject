@@ -6,12 +6,18 @@
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
+
 body {
-  margin: 0;
+  padding-top: 60px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
 }
 article,
 aside,
@@ -113,7 +119,8 @@ input,
 optgroup,
 select,
 textarea {
-  margin: 0 0 0 4px;
+  margin: 0;
+  font: inherit;
   color: inherit;
 }
 button {
@@ -129,7 +136,7 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
-}
+    }
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -907,6 +914,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+    margin-top: 0;
 }
 a {
   color: #428bca;
@@ -927,8 +935,8 @@ figure {
 }
 img {
   vertical-align: middle;
-    height: 120px;
-    width: 290px;
+    height: 48px;
+    width: 292px;
 }
 .img-responsive,
 .thumbnail > img,
@@ -1083,6 +1091,7 @@ h1,
 h2,
 .h2 {
   font-size: 30px;
+    margin-bottom: 10px;
 }
 h3,
 .h3 {
@@ -1101,8 +1110,7 @@ h6,
   font-size: 12px;
 }
 p {
-  margin: 0px 0 10px 0;
-    height: 26px;
+  margin: 0 0 10px;
 }
 .lead {
   margin-bottom: 20px;
@@ -1211,6 +1219,7 @@ a.bg-warning:hover {
 }
 .bg-danger {
   background-color: #f2dede;
+    margin-bottom: 0px;
 }
 a.bg-danger:hover {
   background-color: #e4b9b9;
@@ -1219,6 +1228,7 @@ a.bg-danger:hover {
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #eee;
+    height: 73px;
 }
 ul,
 ol {
@@ -1398,6 +1408,7 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -1428,8 +1439,8 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
-    top: -20px;
-    left: 0px;
+    top: 2px;
+    left: 247px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -2372,8 +2383,6 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
-  height: 34px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
@@ -2387,6 +2396,7 @@ output {
   -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    margin-right: 3px;
 }
 .form-control:focus {
   border-color: #66afe9;
@@ -2437,7 +2447,7 @@ input[type="month"].input-lg {
   line-height: 46px;
 }
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .radio,
 .checkbox {
@@ -2446,6 +2456,9 @@ input[type="month"].input-lg {
   min-height: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
+    top: 0px;
+    left: 0px;
+    height: 75px;
 }
 .radio label,
 .checkbox label {
@@ -2453,6 +2466,8 @@ input[type="month"].input-lg {
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
+    top: 26px;
+    left: 71px;
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
@@ -4112,11 +4127,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   border-color: #e7e7e7;
+    top: -11px;
+    left: 0px;
+    right: 0px;
 }
 .navbar-default .navbar-brand {
   color: #777;
+    top: 8px;
+    left: -17px;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -4206,6 +4226,20 @@ fieldset[disabled] .navbar-default .btn-link:hover,
 .navbar-default .btn-link[disabled]:focus,
 fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
+}
+
+.navbar-inner{
+    position:relative;
+    padding-left:70px;
+}
+.navbar-brand {                
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50px;
+    background: #f00;        
+    margin-left: 0px;
+    padding: 10px;
 }
 .navbar-inverse {
   background-color: #222;
@@ -4569,7 +4603,11 @@ a.list-group-item.active > .badge,
   margin-bottom: 30px;
   color: inherit;
   background-color: #eee;
-  text-align: center;
+  text-align: left;
+  position: relative;
+  background-image: url('http://philosophy.commons.gc.cuny.edu/files/2012/12/austin.jpg');
+    left: 0px;
+    height: 362px;
 }
 .jumbotron h1,
 .jumbotron .h1 {

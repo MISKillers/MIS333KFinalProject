@@ -20,40 +20,34 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
     <form id="form1" runat="server">
-    <nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+
+        <nav class="navbar navbar-fixed-top navbar-default" role="navigation" id="nav-wrapper-top">
+  <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <asp:LinkButton ID="lnkSignUp" runat="server" PostBackUrl="~/SignUp.aspx">Sign Up</asp:LinkButton>
-    &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server"  class="btn btn-primary" Text="Sign Up Test Button" />
-    &nbsp;
+        <br />
+<a class="brand" href="http://classweb2.mccombs.utexas.edu/mis333k/msbcs549/LonghornBank/Welcome.aspx">
+	      <img alt="Logo black"src="longhornbanklogo2lowpixel.png" /></a>
+
+        <br />
+
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+    <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
+      <ul class="nav navbar-nav">
+        <li><a href="http://classweb2.mccombs.utexas.edu/mis333k/msbcs549/LonghornBank/EmployeeLogin.aspx">Employee Login</a></li>
+<%--        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>--%>
       </ul>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  </div><!-- /.container -->
 </nav>
 
     <div>

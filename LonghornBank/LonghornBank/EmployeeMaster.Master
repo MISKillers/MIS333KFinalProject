@@ -33,7 +33,9 @@
       </button>
         <asp:LinkButton ID="lnkHome" runat="server" PostBackUrl="~/Welcome.aspx">Home</asp:LinkButton>
     &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server"  class="btn btn-primary" Text="Sign Up Test Button" />
+        <div="btn btn-primary">
+        <asp:Button ID="Button1" runat="server"  Text="Sign Up Test Button" />
+        </div>
     &nbsp;
     </div>
 

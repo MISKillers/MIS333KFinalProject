@@ -18,6 +18,9 @@
         'declare strings for checking password and username
         Dim strUsername As String
 
+        'Get AccountType to see if he/she has registered
+        'Dim intAccountType As Integer = CInt(Session("AccountType"))
+
         strUsername = txtUsernameLogin.Text
 
         CustDB.GetCustomerUsername(txtUsernameLogin.Text)
@@ -60,6 +63,21 @@
 
         'Session("RecordID") = CustDB.GetRecordID(txtUsernameLogin.Text)
 
+        'Session("AccountType") = CustDB.GetAccountType(txtUsernameLogin.Text)
+
+        '        'set session EmpType
+        '        'hard code for now YOU CANT DO THIS
+        '        'if login goes well, put session in here and go to view customers
+        '        Session("AccountType") = CustDB.CustDataset.Tables("tblCustomers").Rows(0).Item("AccountType").ToString
+
+        '        If intAccountType = Nothing Then
+        '            'call Employee Home
+        '            Response.Redirect("RegisterAccount.aspx")
+        '        Else:
+        '            'call manager home
+        '            Response.Redirect("MyAccounts.aspx")
+        '        End If
+
         'call search form
         Response.Redirect("MyAccounts.aspx")
 
@@ -90,4 +108,19 @@
         Return True
     End Function
 
+    Protected Sub btnSignUp_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub btnSignUp_Click1(sender As Object, e As EventArgs) Handles btnSignUp.Click
+
+    End Sub
+
+    Protected Sub txtUsernameLogin_TextChanged(sender As Object, e As EventArgs) Handles txtUsernameLogin.TextChanged
+
+    End Sub
+
+    Protected Sub txtPasswordLogin_TextChanged(sender As Object, e As EventArgs) Handles txtPasswordLogin.TextChanged
+
+    End Sub
 End Class
