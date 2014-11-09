@@ -164,6 +164,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="SignUp.aspx" />
+    <Content Include="Transfer.aspx" />
     <Content Include="Welcome.aspx" />
     <Content Include="CustomerMaster.Master" />
     <Content Include="EmployeeMaster.Master" />
@@ -260,6 +261,13 @@
     <Compile Include="SignUp.aspx.vb">
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Transfer.aspx.designer.vb">
+      <DependentUpon>Transfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer.aspx.vb">
+      <DependentUpon>Transfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Welcome.aspx.designer.vb">
       <DependentUpon>Welcome.aspx</DependentUpon>
