@@ -150,9 +150,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="DepositApproval.aspx" />
+    <Content Include="DisputeResolution.aspx" />
+    <Content Include="Disputes.aspx" />
     <Content Include="EmployeeTestMaster.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="longhornbanklogo1.jpg" />
+    <Content Include="ManagerHome.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -189,6 +193,27 @@
       <DependentUpon>CustomerMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="DepositApproval.aspx.designer.vb">
+      <DependentUpon>DepositApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepositApproval.aspx.vb">
+      <DependentUpon>DepositApproval.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DisputeResolution.aspx.designer.vb">
+      <DependentUpon>DisputeResolution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisputeResolution.aspx.vb">
+      <DependentUpon>DisputeResolution.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Disputes.aspx.designer.vb">
+      <DependentUpon>Disputes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Disputes.aspx.vb">
+      <DependentUpon>Disputes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="EmployeeMaster.Master.designer.vb">
       <DependentUpon>EmployeeMaster.Master</DependentUpon>
     </Compile>
@@ -201,6 +226,13 @@
     </Compile>
     <Compile Include="EmployeeTestMaster.aspx.vb">
       <DependentUpon>EmployeeTestMaster.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ManagerHome.aspx.designer.vb">
+      <DependentUpon>ManagerHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerHome.aspx.vb">
+      <DependentUpon>ManagerHome.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
