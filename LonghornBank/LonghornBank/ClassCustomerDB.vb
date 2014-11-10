@@ -17,24 +17,24 @@ Public Class ClassCustomerDB
     Dim mstrConnection As String = "workstation id=COMPUTER;packet size=4096;data source=MISSQL.mccombs.utexas.edu;integrated security=False; initial catalog=mis333k_msbcs549;user id=msbcs549;password=1234567Asdf"
     Dim mMyView As New DataView
 
-    Public Function CheckUsername(strUsername As String) As Boolean
-        'name:   CheckUsername()
-        'purpose:  check if username is correct
-        'arguments: strUserName()
-        'returns: boolean
-        'author: E. Clarissa Anjani Gondoprawiro
+    'Public Function CheckUsername(strUsername As String) As Boolean
+    '    'name:   CheckUsername()
+    '    'purpose:  check if username is correct
+    '    'arguments: strUserName()
+    '    'returns: boolean
+    '    'author: E. Clarissa Anjani Gondoprawiro
 
-        mMyView.RowFilter = "Username = '" & strUsername & "'"
+    '    mMyView.RowFilter = "Email = '" & strUsername & "'"
 
-        'Check number records is 
-        'if one return true
-        'if zero return false
-        If mDatasetCustomer.Tables("tblCustomers").Rows.Count = 0 Then
-            Return False
-        Else
-            Return True
-        End If
-    End Function
+    '    'Check number records is 
+    '    'if one return true
+    '    'if zero return false
+    '    If mDatasetCustomer.Tables("tblCustomers").Rows.Count = 0 Then
+    '        Return False
+    '    Else
+    '        Return True
+    '    End If
+    'End Function
 
     Public Function CheckPassword(strPassword As String) As Boolean
         'name: CheckPassword
@@ -47,7 +47,7 @@ Public Class ClassCustomerDB
         'simple compare the password on the form to the password in row zero of the dataset
         'it it matches, return true
         'else, return false
-        If strPassword = mMyView(0).Item("Username").ToString Then
+        If strPassword = mMyView(0).Item("Password").ToString Then
             Return True
         Else
             Return False
@@ -62,7 +62,7 @@ Public Class ClassCustomerDB
         'returns: boolean
         'author: E. Clarissa Anjani Gondoprawiro
 
-        mMyView.RowFilter = "EmailAddr = '" & strEmail & "'"
+        mMyView.RowFilter = "Email = '" & strEmail & "'"
 
         'Check number records is 
         'if one return true
@@ -110,14 +110,14 @@ Public Class ClassCustomerDB
         End Get
     End Property
 
-    Public Sub GetCustomerUsername(ByVal strParamValue As String)
+    Public Sub GetCustomerEmail(ByVal strParamValue As String)
         'name: GetEmployeeRecord
         'purpose: Get Employee Record id
         'arguments: strParamValue
         'returns: none
         'author: E.Clarissa Anjani Gondoprawiro
 
-        RunSPwithOneParam("usp_Customers_Get_By_username", "@username", strParamValue)
+        RunSPwithOneParam("usp_Customers_Get_By_EmailAddr", "@email", strParamValue)
     End Sub
 
     Public Sub GetAllCustomers()
@@ -223,10 +223,10 @@ Public Class ClassCustomerDB
 
 
 
-    Public Function GetRecordID(intRecordID As Integer) As Integer
+    Public Function GetCustomerNumber(intCustomerNumber As Integer) As Integer
 
-        intRecordID = CInt(mDatasetCustomer.Tables("tblCustomers").Rows(0).Item("Username"))
+        intCustomerNumber = CInt(mDatasetCustomer.Tables("tblCustomers").Rows(0).Item("Email"))
 
-        Return intRecordID
+        Return intCustomerNumber
     End Function
 End Class

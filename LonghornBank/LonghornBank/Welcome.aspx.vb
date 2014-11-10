@@ -18,14 +18,16 @@
         'declare strings for checking password and username
         Dim strUsername As String
 
+        Dim bolPassword As Boolean
+
         'Get AccountType to see if he/she has registered
         'Dim intAccountType As Integer = CInt(Session("AccountType"))
 
-        strUsername = txtUsernameLogin.Text
+        strUsername = txtEmailLogin.Text
 
-        CustDB.GetCustomerUsername(txtUsernameLogin.Text)
+        CustDB.GetCustomerEmail(txtEmailLogin.Text)
 
-        If txtUsernameLogin.Text = "" Then
+        If txtEmailLogin.Text = "" Then
             'error message and exit
             lblError.Visible = True
             lblError.Text = ("Please enter a username")
@@ -44,14 +46,12 @@
         If CustDB.MyView.Count = 0 Then
             lblError.Visible = True
             lblError.Text = "Incorrect username"
-            SessionCount()
             Exit Sub
         End If
 
-        If txtUsernameLogin.Text <> CustDB.MyView(0).Item("Username").ToString Then
+        If txtEmailLogin.Text <> CustDB.MyView(0).Item("Email").ToString Then
             lblError.Visible = True
             lblError.Text = ("Incorrect Username")
-            SessionCount()
             Exit Sub
         End If
 
@@ -61,7 +61,9 @@
             Exit Sub
         End If
 
-        'Session("RecordID") = CustDB.GetRecordID(txtUsernameLogin.Text)
+        Session("CustomerNumber") = CustDB.MyView(0).Item("CustomerNumber").ToString
+        'call search form
+        Response.Redirect("MyAccounts.aspx")
 
         'Session("AccountType") = CustDB.GetAccountType(txtUsernameLogin.Text)
 
@@ -78,11 +80,9 @@
         '            Response.Redirect("MyAccounts.aspx")
         '        End If
 
-        'call search form
-        Response.Redirect("MyAccounts.aspx")
 
         'empty password and username
-        txtUsernameLogin.Text = ""
+        txtEmailLogin.Text = ""
         txtPasswordLogin.Text = ""
     End Sub
 
@@ -116,7 +116,7 @@
 
     End Sub
 
-    Protected Sub txtUsernameLogin_TextChanged(sender As Object, e As EventArgs) Handles txtUsernameLogin.TextChanged
+    Protected Sub txtUsernameLogin_TextChanged(sender As Object, e As EventArgs) Handles txtEmailLogin.TextChanged
 
     End Sub
 

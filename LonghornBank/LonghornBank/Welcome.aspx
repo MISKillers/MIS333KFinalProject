@@ -53,7 +53,7 @@
        
         
             <div class="form-group">
-        <asp:TextBox ID="txtUsernameLogin" class="form-control" runat="server" Width="210px" placeholder="Email Address/Username"></asp:TextBox>
+        <asp:TextBox ID="txtEmailLogin" class="form-control" runat="server" Width="210px" placeholder="Email Address/Username"></asp:TextBox>
                 <br />
         <asp:TextBox ID="txtPasswordLogin" class="form-control" runat="server" Width="210px" placeholder="Password"></asp:TextBox>
             <br />

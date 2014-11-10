@@ -156,9 +156,9 @@
     <Content Include="EmployeeHome.aspx" />
     <Content Include="EmployeeTestMaster.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="longhornbanklogo1.jpg" />
     <Content Include="longhornbanklogo2lowpixel.png" />
-    <Content Include="ManagerHome.aspx" />
     <Content Include="MyAccounts.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -241,12 +241,12 @@
       <DependentUpon>EmployeeTestMaster.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="ManagerHome.aspx.designer.vb">
-      <DependentUpon>ManagerHome.aspx</DependentUpon>
+    <Compile Include="ForgotPassword.aspx.designer.vb">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManagerHome.aspx.vb">
-      <DependentUpon>ManagerHome.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+    <Compile Include="ForgotPassword.aspx.vb">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

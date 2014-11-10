@@ -11,16 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Welcome
-
-    '''<summary>
-    '''Head1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
+Partial Public Class ForgotPassword
 
     '''<summary>
     '''form1 control.
@@ -32,40 +23,22 @@ Partial Public Class Welcome
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''txtUsernameLogin control.
+    '''txtEmail control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtEmailLogin As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''txtPasswordLogin control.
+    '''txtBirthday control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPasswordLogin As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''btnLogin control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''btnSignUp control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSignUp As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtBirthday As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''lblError control.
@@ -77,11 +50,11 @@ Partial Public Class Welcome
     Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''btnForgot control.
+    '''btnSend control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnForgot As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnSend As Global.System.Web.UI.WebControls.Button
 End Class
