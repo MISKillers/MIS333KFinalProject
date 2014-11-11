@@ -32,7 +32,7 @@
       </button>
         <br />
 <a class="brand" href="http://classweb2.mccombs.utexas.edu/mis333k/msbcs549/LonghornBank/Welcome.aspx">
-	      <img alt="Logo black"src="longhornbanklogo2lowpixel.png" width="225" height="50" /></a>
+	      <img alt="Logo black"src="longhornbanklogo2lowpixel.png" width="225" /></a>
 
         <br />
 
@@ -50,6 +50,10 @@
 <div class="container" style="margin: 50px;" text-align:"center">
       <div class="row"><h2>Sign Up to be a Customer</h2></div>
 <form role="form" text-align:"center">
+  <div class="form-group">
+    <label for="exampleInputEmail">Customer Number</label>
+    <asp:TextBox ID="txtCustNumber" class="form-control" runat="server" Width="210px" ReadOnly="True"></asp:TextBox>
+  </div>
   <div class="form-group">
     <label for="exampleInputEmail">Email Address/Username</label>
     <asp:TextBox ID="txtEmail" class="form-control" runat="server" Width="210px" placeholder="Email Address"></asp:TextBox>
@@ -79,14 +83,6 @@
     <asp:TextBox ID="txtAddress" class="form-control" runat="server" Width="210px" placeholder="Address"></asp:TextBox>
   </div>
   <div class="form-group">
-    <label for="exampleInputCity">City</label>
-    <asp:TextBox ID="txtCity" class="form-control" runat="server" Width="210px" placeholder="City"></asp:TextBox>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputState">State</label>
-    <asp:TextBox ID="txtState" class="form-control" runat="server" Width="210px" placeholder="State"></asp:TextBox>
-  </div>
-  <div class="form-group">
     <label for="exampleInputZipcode">Zipcode</label>
     <asp:TextBox ID="txtZip" class="form-control" runat="server" Width="210px" placeholder="Zipcode"></asp:TextBox>
   </div>
@@ -96,7 +92,7 @@
   </div>
 
   <div class="form-group">
-      <asp:Button ID="btnSubmit" type="button" runat="server" PostBackUrl="~/MyAccounts.aspx" Text="Submit"  class="btn btn-primary" Height="40px" Width="210px"/>
+      <asp:Button ID="btnSubmit" type="button" runat="server" Text="Submit"  class="btn btn-primary" Height="40px" Width="210px"/>
   </div>
 </form>
  </div>

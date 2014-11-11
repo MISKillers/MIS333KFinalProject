@@ -16,25 +16,9 @@ Public Class ClassCustomerDB
     Dim mdbConn As SqlConnection
     Dim mstrConnection As String = "workstation id=COMPUTER;packet size=4096;data source=MISSQL.mccombs.utexas.edu;integrated security=False; initial catalog=mis333k_msbcs549;user id=msbcs549;password=1234567Asdf"
     Dim mMyView As New DataView
-
-    'Public Function CheckUsername(strUsername As String) As Boolean
-    '    'name:   CheckUsername()
-    '    'purpose:  check if username is correct
-    '    'arguments: strUserName()
-    '    'returns: boolean
-    '    'author: E. Clarissa Anjani Gondoprawiro
-
-    '    mMyView.RowFilter = "Email = '" & strUsername & "'"
-
-    '    'Check number records is 
-    '    'if one return true
-    '    'if zero return false
-    '    If mDatasetCustomer.Tables("tblCustomers").Rows.Count = 0 Then
-    '        Return False
-    '    Else
-    '        Return True
-    '    End If
-    'End Function
+    'declaration for finding max customer number
+    Dim mDatasetMaxCustomerNumber As New DataSet
+    Dim mMyCustomerNumberView As New DataView
 
     Public Function CheckPassword(strPassword As String) As Boolean
         'name: CheckPassword
@@ -53,7 +37,6 @@ Public Class ClassCustomerDB
             Return False
         End If
     End Function
-
 
     Public Function CheckEmail(strEmail As String) As Boolean
         'name:   CheckUsername()
@@ -111,13 +94,54 @@ Public Class ClassCustomerDB
     End Property
 
     Public Sub GetCustomerEmail(ByVal strParamValue As String)
-        'name: GetEmployeeRecord
-        'purpose: Get Employee Record id
+        'name: GetCustomerEmail
+        'purpose: Get customer email to sign in
         'arguments: strParamValue
         'returns: none
         'author: E.Clarissa Anjani Gondoprawiro
 
         RunSPwithOneParam("usp_Customers_Get_By_EmailAddr", "@email", strParamValue)
+    End Sub
+
+    Public Function GetMaxCustomerNumber()
+        'name: GetMaxCustomerNumber
+        'purpose: Get customernumber to increment for the customer sign up
+        Dim intMaxCustomerNumber As Integer
+
+        RunProcedureMaxCustomerNumber("usp_Get_Max_CustomerNumber")
+        intMaxCustomerNumber = mDatasetMaxCustomerNumber.Tables("tblCustomers").Rows(0).Item(0)
+        Return intMaxCustomerNumber
+    End Function
+
+    Public Sub InsertCustomer(strCustomerNumber As String, strPassword As String, strLastName As String, strFirstName As String, strInitial As String, strAddress As String, strZipcode As String, strEmail As String, strPhone As String, strBirthday As String)
+        Dim aryNames As New ArrayList
+        Dim aryValues As New ArrayList
+
+        aryNames.Add("@CustomerNumber")
+        aryNames.Add("@Password")
+        aryNames.Add("@LastName")
+        aryNames.Add("@FirstName")
+        aryNames.Add("@MI")
+        aryNames.Add("@Address")
+        aryNames.Add("@ZipCode")
+        aryNames.Add("@EmailAddr")
+        aryNames.Add("@Phone")
+        aryNames.Add("@DOB")
+
+        aryValues.Add(strCustomerNumber)
+        aryValues.Add(strPassword)
+        aryValues.Add(strLastName)
+        aryValues.Add(strFirstName)
+        aryValues.Add(strInitial)
+        aryValues.Add(strAddress)
+        aryValues.Add(strZipcode)
+        aryValues.Add(strEmail)
+        aryValues.Add(strPhone)
+        aryValues.Add(strBirthday)
+
+        'call the SP to insert the record
+        UseSPforInsertOrUpdateQuery("usp_Customer_Insert", aryNames, aryValues)
+
     End Sub
 
     Public Sub GetAllCustomers()
@@ -127,7 +151,7 @@ Public Class ClassCustomerDB
         'returns: none
         'author: E.Clarissa Anjani Gondoprawiro
 
-        RunProcedure("usp_customers_get_all")
+        RunProcedureGetAllCustomers("usp_customers_get_all")
     End Sub
 
     Public Sub RunSPwithOneParam(ByVal strSPName As String, ByVal strParamName As String, ByVal strParamValue As String)
@@ -159,8 +183,50 @@ Public Class ClassCustomerDB
         End Try
     End Sub
 
+    Public Sub RunProcedureMaxCustomerNumber(ByVal strName As String)
+        'name: Run procedure
+        'purpose: Run procedure to get all customers
+        'arguments: strName
+        'returns: n/a
+        'author: E. Clarissa Anjani Gondoprawiro
 
-    Public Sub RunProcedure(ByVal strName As String)
+        ' CREATES INSTANCES OF THE CONNECTION AND COMMAND OBJECT
+        Dim objConnection As New SqlConnection(mstrConnection)
+        ' Tell SQL server the name of the stored procedure you will be executing
+        Dim mdbDataAdapter As New SqlDataAdapter(strName, objConnection)
+        Try
+            ' SETS THE COMMAND TYPE TO "STORED PROCEDURE"
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            ' clear dataset
+            Me.mDatasetMaxCustomerNumber.Clear()
+            ' OPEN CONNECTION AND FILL DATASET
+            mdbDataAdapter.Fill(mDatasetMaxCustomerNumber, "tblCustomers")
+            ' copy dataset to dataview
+            mMyCustomerNumberView.Table = mDatasetMaxCustomerNumber.Tables("tblCustomers")
+        Catch ex As Exception
+            Throw New Exception("stored procedure is " & strName.ToString & " error is " & ex.Message)
+        End Try
+    End Sub
+
+    'define a public read only property for the outside world to access the dataset filled by this class
+    Public ReadOnly Property MaxCustomerNumberDataset() As DataSet
+        Get
+            'return Dataset to user
+            Return mDatasetMaxCustomerNumber
+        End Get
+    End Property
+
+
+    'define a public read only property for the outside world to access the dataset filled by this class
+    Public ReadOnly Property MyCustomerNumberView() As DataView
+        Get
+            'return Dataset to user
+            Return mMyCustomerNumberView
+        End Get
+    End Property
+
+
+    Public Sub RunProcedureGetAllCustomers(ByVal strName As String)
         'name: Run procedure
         'purpose: Run procedure to get all customers
         'arguments: strName
@@ -185,43 +251,46 @@ Public Class ClassCustomerDB
         End Try
     End Sub
 
-    
-    Public Sub AddCustomerStoredProcedureShorterParams(mPassword, mLastname, mFirstName, mMI, mAddress, mCity, mState, mZipcode, mEmailAddr, mPhone) 'mDOB
-        ' CREATES INSTANCES OF THE CONNECTION AND COMMAND OBJECT
-        Dim objConnection As New SqlConnection(mstrConnection)
+    Protected Sub UseSPforInsertOrUpdateQuery(ByVal strUSPName As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
+        'Purpose: Sort the dataview by the argument (general sub)
+        'Arguments: Stored procedure name, Arraylist of parameter names, and  arraylist of parameter values
+        'Returns: Nothing
+        'Author: Rick Byars
+        'Date: 4/03/12
 
-        ' Tell SQL server the name of the stored procedure you will be executing
-        Dim objCommand As New SqlDataAdapter("usp_Customer_Insert", objConnection)
+        'Creates instances of the connection and command object
+        Dim objConnection As New SqlConnection(mstrConnection)
+        'Tell SQL server the name of the stored procedure
+        Dim objCommand As New SqlDataAdapter(strUSPName, objConnection)
         Try
-            ' SETS THE COMMAND TYPE TO "STORED PROCEDURE"
+            'Sets the command type to stored procedure
             objCommand.SelectCommand.CommandType = CommandType.StoredProcedure
 
-            ' ADD PARAMETER(S) TO SPROC
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@password", mPassword))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@lastname", mLastname))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@firstname", mFirstName))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@MI", mMI))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@address", mAddress))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@city", mCity))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@state", mState))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@zipcode", mZipcode))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@emailaddr", mEmailAddr))
-            objCommand.SelectCommand.Parameters.Add(New SqlParameter("@phone", mPhone))
-            'objCommand.SelectCommand.Parameters.Add(New SqlParameter("@DOB", mDOB))
+            'Add parameters to stored procedure
+            Dim index As Integer = 0
+            For Each paramName As String In aryParamNames
+                objCommand.SelectCommand.Parameters.Add(New SqlParameter(CStr(aryParamNames(index)), CStr(aryParamValues(index))))
+                index = index + 1
+            Next
 
-            ' OPEN CONNECTION AND RUN INSERT QUERY
+            ' OPEN CONNECTION AND RUN INSERT/UPDATE QUERY
             objCommand.SelectCommand.Connection = objConnection
             objConnection.Open()
             objCommand.SelectCommand.ExecuteNonQuery()
             objConnection.Close()
+
+            'Print out each element of our arraylists if error occured
         Catch ex As Exception
-            Throw New Exception(" error is " & ex.Message)
+            Dim strError As String = ""
+            Dim index As Integer = 0
+            For Each paramName As String In aryParamNames
+                strError = strError & "ParamName: " & CStr(aryParamNames(index))
+                strError = strError & " ParamValue: " & CStr(aryParamValues(index))
+                index = index + 1
+            Next
+            Throw New Exception(strError & " error message is " & ex.Message)
         End Try
-
     End Sub
-
-
-
 
     Public Function GetCustomerNumber(intCustomerNumber As Integer) As Integer
 
