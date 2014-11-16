@@ -46,8 +46,14 @@
          <asp:Button ID="btnSearch" runat="server" class="btn btn-primary" Height="40px" Text="Search" type="button" Width="210px" />
          <br />
         <br />
-        <asp:GridView ID="GridView1" class="form-control" runat="server">
+        <asp:GridView ID="gvCheckingTransactions" class="form-control" runat="server">
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" />
+            </Columns>
         </asp:GridView>
+
+
+         <br />
 
 
     </div>
