@@ -146,17 +146,21 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CheckingAccountDetails.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="DepositApproval.aspx" />
+    <Content Include="Deposits.aspx" />
     <Content Include="DisputeResolution.aspx" />
     <Content Include="Disputes.aspx" />
+    <Content Include="DisputeTransaction.aspx" />
     <Content Include="EmployeeHome.aspx" />
     <Content Include="EmployeeTestMaster.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="IRAAccountDetails.aspx" />
     <Content Include="longhornbanklogo1.jpg" />
     <Content Include="longhornbanklogo2lowpixel.png" />
     <Content Include="ManageEmployees.aspx" />
@@ -169,6 +173,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="RegisterAccount.aspx" />
+    <Content Include="SavingsAccountDetails.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Transfer.aspx" />
     <Content Include="CustomerMaster.Master" />
@@ -190,6 +195,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckingAccountDetails.aspx.designer.vb">
+      <DependentUpon>CheckingAccountDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckingAccountDetails.aspx.vb">
+      <DependentUpon>CheckingAccountDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ClassCustomerDB.vb" />
     <Compile Include="ClassEmployeeDB.vb" />
     <Compile Include="ClassFormat.vb" />
@@ -208,6 +220,13 @@
       <DependentUpon>DepositApproval.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Deposits.aspx.designer.vb">
+      <DependentUpon>Deposits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Deposits.aspx.vb">
+      <DependentUpon>Deposits.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="DisputeResolution.aspx.designer.vb">
       <DependentUpon>DisputeResolution.aspx</DependentUpon>
     </Compile>
@@ -220,6 +239,13 @@
     </Compile>
     <Compile Include="Disputes.aspx.vb">
       <DependentUpon>Disputes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DisputeTransaction.aspx.designer.vb">
+      <DependentUpon>DisputeTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DisputeTransaction.aspx.vb">
+      <DependentUpon>DisputeTransaction.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="EmployeeHome.aspx.designer.vb">
@@ -249,6 +275,13 @@
     <Compile Include="ForgotPassword.aspx.vb">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IRAAccountDetails.aspx.designer.vb">
+      <DependentUpon>IRAAccountDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IRAAccountDetails.aspx.vb">
+      <DependentUpon>IRAAccountDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ManageEmployees.aspx.designer.vb">
       <DependentUpon>ManageEmployees.aspx</DependentUpon>
@@ -296,6 +329,13 @@
     <Compile Include="RegisterAccount.aspx.vb">
       <DependentUpon>RegisterAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SavingsAccountDetails.aspx.designer.vb">
+      <DependentUpon>SavingsAccountDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SavingsAccountDetails.aspx.vb">
+      <DependentUpon>SavingsAccountDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="SignUp.aspx.designer.vb">
       <DependentUpon>SignUp.aspx</DependentUpon>

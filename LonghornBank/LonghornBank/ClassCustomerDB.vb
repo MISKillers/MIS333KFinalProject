@@ -298,4 +298,12 @@ Public Class ClassCustomerDB
 
         Return intCustomerNumber
     End Function
+
+    Public Sub DoSortPriceSearch(ByVal strSortValue As String)
+        If strSortValue = "Sort By Name" Then
+            MyView.Sort = "lastname, firstname"
+        Else
+            MyView.Sort = "username"
+        End If
+    End Sub
 End Class

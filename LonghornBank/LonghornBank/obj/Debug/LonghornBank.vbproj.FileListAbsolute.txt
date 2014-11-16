@@ -52,3 +52,13 @@ C:\Users\clari_000\Desktop\MIS333KFinalProject\LonghornBank\LonghornBank\bin\Mic
 C:\Users\clari_000\Desktop\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.dll
 C:\Users\clari_000\Desktop\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.pdb
 C:\Users\Jonathan\Desktop\Longhorn Bank\MIS333KFinalProject\LonghornBank\LonghornBank\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\bin\LonghornBank.dll
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\bin\LonghornBank.pdb
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\bin\LonghornBank.xml
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.Resources.resources
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.vbproj.GenerateResource.Cache
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.dll
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.xml
+C:\Users\Eunji\Documents\Visual Studio 2012\MIS333KFinalProject\LonghornBank\LonghornBank\obj\Debug\LonghornBank.pdb

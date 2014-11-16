@@ -24,16 +24,17 @@
 
     End Sub
 
-    Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlTransferFrom.SelectedIndexChanged
 
-    End Sub
-
-    Protected Sub btnMakeTranfer_Click(sender As Object, e As EventArgs) Handles btnMakeTranfer.Click
+    Protected Sub btnMakeTranfer_Click(sender As Object, e As EventArgs) Handles btnMakeTransfer.Click
         'make sure there is enough money in account to transfer
 
         If ddlTransferFrom.SelectedIndex = ddlTransferTo.SelectedIndex Then
             MsgBox("Transfer successful")
         End If
+
+    End Sub
+
+    Protected Sub ddlTransferFrom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlTransferFrom.SelectedIndexChanged
 
     End Sub
 End Class

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Transfer
+Partial Public Class Deposits
 
     '''<summary>
     '''form1 control.
@@ -23,47 +23,29 @@ Partial Public Class Transfer
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''ddlTransferFrom control.
+    '''ddlDepositAccount control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlTransferFrom As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlDepositAccount As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''ddlTransferTo control.
+    '''txtDepositAmount control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlTransferTo As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtDepositAmount As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Calendar1 control.
+    '''btnMakeDeposit control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Calendar1 As Global.System.Web.UI.WebControls.Calendar
-
-    '''<summary>
-    '''txtTransferAmount control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtTransferAmount As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''btnMakeTransfer control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnMakeTransfer As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnMakeDeposit As Global.System.Web.UI.WebControls.Button
 End Class

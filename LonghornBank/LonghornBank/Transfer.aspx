@@ -1,34 +1,45 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Transfer.aspx.vb" Inherits="SendEmail.Transfer" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Transfer.aspx.vb" Inherits="LonghornBank.Transfer" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-        From:
-        <asp:DropDownList ID="ddlTransferFrom" runat="server">
+         <label for="Transfer" style="font-size: 22px">Transfer</label><br />
+        <br />
+    
+        <label for="TransferFrom">Transfer From:</label><br />
+        <asp:DropDownList ID="ddlTransferFrom" class="form-control" runat="server">
         </asp:DropDownList>
         <br />
         <br />
-        To:<br />
-        <asp:DropDownList ID="ddlTransferTo" runat="server">
+
+        <label for="TransferTo">Transfer To:</label><br />
+        <asp:DropDownList ID="ddlTransferTo" class="form-control" runat="server">
         </asp:DropDownList>
         <br />
         <br />
-        Amount:<br />
-        <asp:TextBox ID="txtTransferAmount" runat="server"></asp:TextBox>
+
+        <label for="Transfer Date">Transfer Date:</label>
+        <asp:Calendar ID="Calendar1" class="form-control" runat="server"></asp:Calendar>
+       
         <br />
+
         <br />
-        Transfer Date:<br />
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        [e.g. 10/24/14]<br />
+
+        <label for="Amount">Amount:</label>
+    <asp:TextBox ID="txtTransferAmount" class="form-control" runat="server" Width="210px" placeholder="Transfer Amount"></asp:TextBox>
+
         <br />
-        <asp:Button ID="btnMakeTranfer" runat="server" Text="Transfer" OnClientClick="return confirm('Are you sure you want to submit ?')"/>
+
+        <asp:Button ID="btnMakeTransfer" type="button" runat="server" Text="Make Transfer" OnClientClick="return confirm('Are you sure you want to submit ?')" class="btn btn-primary" Height="40px" Width="210px"/>
+
         <br />
         </div>
     </form>
