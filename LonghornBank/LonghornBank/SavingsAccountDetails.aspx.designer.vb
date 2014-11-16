@@ -41,13 +41,31 @@ Partial Public Class SavingsAccountDetails
     Protected WithEvents ddlTransferType As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''txtTransferAmount control.
+    '''radPriceSearch control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtTransferAmount As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents radPriceSearch As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''txtPriceLower control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPriceLower As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtPriceUpper control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPriceUpper As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtTransNumber control.

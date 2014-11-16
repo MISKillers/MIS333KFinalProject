@@ -25,7 +25,17 @@
         </asp:DropDownList>
         <br />
         <label for="Amount">Amount:</label>
-         <asp:TextBox ID="txtTransferAmount" class="form-control" runat="server" Width="210px" placeholder="Transfer Amount"></asp:TextBox>
+         <asp:RadioButtonList ID="radPriceSearch" runat="server" Height="136px" Width="308px">
+            <asp:ListItem>$0-$100</asp:ListItem>
+            <asp:ListItem>$101-$200</asp:ListItem>
+            <asp:ListItem>$201-$300</asp:ListItem>
+            <asp:ListItem>+$300</asp:ListItem>
+            <asp:ListItem>Custom Range</asp:ListItem>
+        </asp:RadioButtonList>
+        <br />
+        <asp:TextBox ID="txtPriceLower" runat="server" class="form-control" placeholder="SearchPriceLower" Visible="False" Width="60px"></asp:TextBox>
+        <asp:TextBox ID="txtPriceUpper" runat="server" class="form-control" placeholder="SearchPriceUpper" Visible="False" Width="60px"></asp:TextBox>
+        <br />
         <br />
         <label for="TransNumber">Transaction Number:</label>
          <asp:TextBox ID="txtTransNumber" class="form-control" runat="server" Width="210px" placeholder="Transfer Number"></asp:TextBox>
