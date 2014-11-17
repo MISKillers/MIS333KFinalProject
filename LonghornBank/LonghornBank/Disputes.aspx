@@ -13,7 +13,7 @@
   </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/DisputeResolution.aspx">Specific Dispute</asp:LinkButton>
-        <asp:GridView ID="GridView1" runat="server">
+        &nbsp; the manager should select a specific dispute and be taken to the dispute Resolution page<asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
     
 </asp:Content>

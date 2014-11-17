@@ -1,11 +1,11 @@
-﻿
-'Author: E. Clarissa Anjani Gondoprawiro
-'Assignment: ASP 5 Clarissa's Cake Shop
-'Date: October 7, 2014
-'Program Description: To learn how to hook forms
-
+﻿'Author: E. Clarissa Anjani Gondoprawiro
+'Assignment: ASP 2 Clarissa's Cake Shop
+'Date: September 18, 2014
+'Program Description: To access employee data by logging in
 Imports System.Data
 Imports System.Data.SqlClient
+
+
 
 Public Class ClassEmployeeDB
     'these variables are internal to object
@@ -15,132 +15,9 @@ Public Class ClassEmployeeDB
     Dim mdbConn As SqlConnection
     Dim mstrConnection As String = "workstation id=COMPUTER;packet size=4096;data source=MISSQL.mccombs.utexas.edu;integrated security=False; initial catalog=mis333k_msbcs549;user id=msbcs549;password=1234567Asdf"
     Dim mMyView As New DataView
-    'Public Sub GetAllEmployees()
-    '    'name: GetAllEmployees()
-    '    'purpose: get all employeess from database
-    '    'arguments: n/a
-    '    'returns: n/a
-    '    'author: E. Clarissa Anjani Gondoprawiro
-
-    '    mstrQuery = "select * from tblemployee"
-    '    SelectQuery(mstrQuery)
-    'End Sub
-
-    'Public Sub Addemployees(strUsername As String, strPassword As String, strFirstName As String, strInitial As String, strLastName As String, strAddress As String, strCity As String, strState As String, strZip As String, strEmail As String, strPhone As String)
-    '    'name: Addemployees()
-    '    'purpose: insert items into the dataset
-    '    'arguments: n/a
-    '    'returns: n/a
-    '    'author: E. Clarissa Anjani Gondoprawiro
-
-
-    '    'build insert query
-    '    'neet to change to str
-    '    mstrQuery = "INSERT INTO tblemployee (UserName, Password, FirstName, MI, LastName, Address, City, State, ZipCode, EmailAddr, Phone) VALUES (" & _
-    '  "'" & strUsername & "', " & _
-    '  "'" & strPassword & "', " & _
-    '  "'" & strFirstName & "', " & _
-    '  "'" & strInitial & "', " & _
-    '  "'" & strLastName & "', " & _
-    '  "'" & strAddress & "', " & _
-    '  "'" & strCity & "', " & _
-    '  "'" & strState & "', " & _
-    '  "'" & strZip & "', " & _
-    '  "'" & strEmail & "', " & _
-    '  "'" & strPhone & "')"
-
-    '    UpdateDB(mstrQuery)
-
-    'End Sub
-
-    Public Sub UpdateDB(ByVal strQuery As String)
-        'name: UpdateDB
-        'purpose: run given query to update database
-        'argument: one string(any SQL statement)
-        'return: nothing
-        'author: E. Clarissa Anjani Gondoprawiro
-
-        Try
-            'make connection using the connection string above
-            mdbConn = New SqlConnection(mstrConnection)
-            Dim dbCommand As New SqlCommand(strQuery, mdbConn)
-
-            'open the connection
-            mdbConn.Open()
-
-            'run the query
-            dbCommand.ExecuteNonQuery()
-
-            'close the connection
-            mdbConn.Close()
-
-        Catch ex As Exception
-            Throw New Exception("query is " & strQuery.ToString & " error is " & ex.Message)
-        End Try
-    End Sub
-
-    'Public Function CheckEmpID(intEmpID As Integer) As Boolean
-    '    'name: CheckUsername
-    '    'purpose:  check if username is correct
-    '    'arguments: strUserName
-    '    'returns: boolean
-    '    'author: E. Clarissa Anjani Gondoprawiro
-
-    '    mstrQuery = "select * from tblemployee where EmpID ='" & intEmpID & "'"
-    '    SelectQuery(mstrQuery)
-    '    'check the number of records in dataset
-    '    'if one return true
-    '    'if zero return false
-
-    '    If mDatasetEmployee.Tables("tblemployee").Rows.Count = 0 Then
-    '        Return False
-    '    Else
-    '        Return True
-    '    End If
-
-    'End Function
-
-
-    'Public Function CheckPassword(strPassword As String) As Boolean
-    '    '    'name: CheckPassword
-    '    '    'purpose: check if password is correct
-    '    '    'arguments: strPassword
-    '    '    'returns: boolean
-    '    '    'author: E. Clarissa Anjani Gondoprawiro
-
-    '    'DO NOT RUN A QUERY HERE
-
-    '    'simply compare the password on the form to the password in row zero of data set
-    '    'if it matches
-    '    'return true
-    '    'else
-    '    'return false
-
-    '    If strPassword = mDatasetEmployee.Tables("tblemployee").Rows(0).Item("password") Then
-    '        Return True
-    '    Else
-    '        Return False
-    '    End If
-    'End Function
-
-    Public Function CheckEmpID(strEmployeeID As String) As Boolean
-        'name:   CheckUsername()
-        'purpose:  check if username is correct
-        'arguments: strUserName()
-        'returns: boolean
-        'author: E. Clarissa Anjani Gondoprawiro
-
-        mMyView.RowFilter = "EmpID = '" & strEmployeeID & "'"
-
-        'Check number records is 
-        'if one return true
-        'if zero return false
-        If mDatasetEmployee.Tables("tblemployee").Rows.Count = 0 Then
-            Return False
-        Else
-            Return True
-        End If
-    End Function
+    'declaration for finding max customer number
+    Dim mDatasetMaxEmployeeNumber As New DataSet
+    Dim mMyEmployeeNumberView As New DataView
 
     Public Function CheckPassword(strPassword As String) As Boolean
         'name: CheckPassword
@@ -160,9 +37,30 @@ Public Class ClassEmployeeDB
         End If
     End Function
 
+    Public Function CheckEmail(strEmail As String) As Boolean
+        'name:   CheckUsername()
+        'purpose:  check if username is correct
+        'arguments: strUserName()
+        'returns: boolean
+        'author: E. Clarissa Anjani Gondoprawiro
+
+        mMyView.RowFilter = "Email = '" & strEmail & "'"
+
+        'Check number records is 
+        'if one return true
+        'if zero return false
+        If mDatasetCustomer.Tables("tblCustomers").Rows.Count = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+
+
 
     'define a public read only property for the outside world to access the dataset filled by this class
-    Public ReadOnly Property EmpDataset() As DataSet
+    Public ReadOnly Property EmployeeDataset() As DataSet
         Get
             'return Dataset to user
             Return mDatasetEmployee
@@ -178,14 +76,56 @@ Public Class ClassEmployeeDB
         End Get
     End Property
 
-    Public Sub GetEmployeeRecord(ByVal strParamValue As String)
+
+    Public Function GetMaxEmployeeNumber()
+        'name: GetMaxCustomerNumber
+        'purpose: Get customernumber to increment for the customer sign up
+        Dim intMaxEmployeNumber As Integer
+
+        RunProcedureMaxCustomerNumber("usp_Employee_Get_Max_EmpID")
+        intMaxEmployeNumber = mDatasetMaxEmployeeNumber.Tables("tblEmployees").Rows(0).Item(0)
+        Return intMaxEmployeNumber
+    End Function
+
+    Public Sub InsertEmployee(strEmpID As String, strFirstName As String, strMI As String, strLastName As String, strPassword As String, strSSN As String, strEmpType As String, strAddress As String, strZipCode As String, strPhone As String)
+        Dim aryNames As New ArrayList
+        Dim aryValues As New ArrayList
+
+        aryNames.Add("@EmpID")
+        aryNames.Add("@FirstName")
+        aryNames.Add("@MI")
+        aryNames.Add("@LastName")
+        aryNames.Add("@Password")
+        aryNames.Add("@SSN")
+        aryNames.Add("@EmpType")
+        aryNames.Add("@Address")
+        aryNames.Add("@ZipCode")
+        aryNames.Add("@Phone")
+
+        aryValues.Add(strEmpID)
+        aryValues.Add(strFirstName)
+        aryValues.Add(strMI)
+        aryValues.Add(strLastName)
+        aryValues.Add(strPassword)
+        aryValues.Add(strSSN)
+        aryValues.Add(strEmpType)
+        aryValues.Add(strAddress)
+        aryValues.Add(strZipCode)
+        aryValues.Add(strPhone)
+
+        'call the SP to insert the record
+        UseSPforInsertOrUpdateQuery("usp_Employees_Insert", aryNames, aryValues)
+
+    End Sub
+
+    Public Sub GetAllCustomers()
         'name: GetEmployeeRecord
         'purpose: Get Employee Record id
         'arguments: strParamValue
         'returns: none
         'author: E.Clarissa Anjani Gondoprawiro
 
-        RunSPwithOneParam("usp_Employee_Get_All", "@EmpID", strParamValue)
+        RunProcedureGetAllCustomers("usp_customers_get_all")
     End Sub
 
     Public Sub RunSPwithOneParam(ByVal strSPName As String, ByVal strParamName As String, ByVal strParamValue As String)
@@ -204,21 +144,20 @@ Public Class ClassEmployeeDB
             ' ADD PARAMETER(S) TO SPROC
             mdbDataAdapter.SelectCommand.Parameters.Add(New SqlParameter(strParamName, strParamValue))
             ' clear dataset
-            Me.mDatasetEmployee.Clear()
+            mDatasetEmployee.Clear()
 
             ' OPEN CONNECTION AND FILL DATASET
-            mdbDataAdapter.Fill(mDatasetEmployee, "tblemployee")
+            mdbDataAdapter.Fill(mDatasetEmployee, "tblEmployees")
 
             ' copy dataset to dataview
-            mMyView.Table = mDatasetEmployee.Tables("tblemployee")
+            mMyView.Table = mDatasetEmployee.Tables("tblEmployees")
 
         Catch ex As Exception
             Throw New Exception("params are " & strSPName.ToString & " " & strParamName.ToString & " " & strParamValue.ToString & " error is " & ex.Message)
         End Try
     End Sub
 
-
-    Public Sub RunProcedure(ByVal strName As String)
+    Public Sub RunProcedureMaxEmployeeID(ByVal strName As String)
         'name: Run procedure
         'purpose: Run procedure to get all customers
         'arguments: strName
@@ -233,50 +172,104 @@ Public Class ClassEmployeeDB
             ' SETS THE COMMAND TYPE TO "STORED PROCEDURE"
             mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
             ' clear dataset
-            Me.mDatasetEmployee.Clear()
+            Me.mDatasetMaxEmployeeNumber.Clear()
             ' OPEN CONNECTION AND FILL DATASET
-            mdbDataAdapter.Fill(mDatasetEmployee, "tblemployee")
+            mdbDataAdapter.Fill(mDatasetMaxEmployeeNumber, "tblEmployees")
             ' copy dataset to dataview
-            mMyView.Table = mDatasetEmployee.Tables("tblemployee")
+            mMyEmployeeNumberView.Table = mDatasetMaxEmployeeNumber.Tables("tblEmployees")
         Catch ex As Exception
             Throw New Exception("stored procedure is " & strName.ToString & " error is " & ex.Message)
         End Try
     End Sub
 
-    Public Sub SelectQuery(ByVal strQuery As String)
-        'name: SelectQuery
-        'purpose: run any select query and fill dataset
-        'arguments: strQuery
+    'define a public read only property for the outside world to access the dataset filled by this class
+    Public ReadOnly Property MaxCustomerNumberDataset() As DataSet
+        Get
+            'return Dataset to user
+            Return mDatasetMaxEmployeeNumber
+        End Get
+    End Property
+
+
+    'define a public read only property for the outside world to access the dataset filled by this class
+    Public ReadOnly Property MyCustomerNumberView() As DataView
+        Get
+            'return Dataset to user
+            Return mMyEmployeeNumberView
+        End Get
+    End Property
+
+
+    Public Sub RunProcedureGetAllCustomers(ByVal strName As String)
+        'name: Run procedure
+        'purpose: Run procedure to get all customers
+        'arguments: strName
         'returns: n/a
         'author: E. Clarissa Anjani Gondoprawiro
 
+        ' CREATES INSTANCES OF THE CONNECTION AND COMMAND OBJECT
+        Dim objConnection As New SqlConnection(mstrConnection)
+        ' Tell SQL server the name of the stored procedure you will be executing
+        Dim mdbDataAdapter As New SqlDataAdapter(strName, objConnection)
         Try
-            'define data connection and data adapter
-            mdbConn = New SqlConnection(mstrConnection)
-            mdbdataAdapter = New SqlDataAdapter(strQuery, mdbConn)
-
-            'open the connection and dataset
-            mdbConn.Open()
-
-            'clear the dataset before filling
-            mDatasetEmployee.Clear()
-
-            'fill the dataset
-            mdbdataAdapter.Fill(mDatasetEmployee, "tblemployee")
-
-            'close the connection
-            mdbConn.Close()
-
+            ' SETS THE COMMAND TYPE TO "STORED PROCEDURE"
+            mdbDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+            ' clear dataset
+            Me.mDatasetCustomer.Clear()
+            ' OPEN CONNECTION AND FILL DATASET
+            mdbDataAdapter.Fill(mDatasetCustomer, "tblCustomers")
+            ' copy dataset to dataview
+            mMyView.Table = mDatasetCustomer.Tables("tblCustomers")
         Catch ex As Exception
-            Throw New Exception("query is " & strQuery.ToString & " error is " & ex.Message)
+            Throw New Exception("stored procedure is " & strName.ToString & " error is " & ex.Message)
         End Try
-
     End Sub
 
-    Public Function GetEmpType(intEmpType As Integer) As Integer
+    Protected Sub UseSPforInsertOrUpdateQuery(ByVal strUSPName As String, ByVal aryParamNames As ArrayList, ByVal aryParamValues As ArrayList)
+        'Purpose: Sort the dataview by the argument (general sub)
+        'Arguments: Stored procedure name, Arraylist of parameter names, and  arraylist of parameter values
+        'Returns: Nothing
+        'Author: Rick Byars
+        'Date: 4/03/12
 
-        intEmpType = CInt(mDatasetEmployee.Tables("tblemployee").Rows(0).Item("EmpType"))
+        'Creates instances of the connection and command object
+        Dim objConnection As New SqlConnection(mstrConnection)
+        'Tell SQL server the name of the stored procedure
+        Dim objCommand As New SqlDataAdapter(strUSPName, objConnection)
+        Try
+            'Sets the command type to stored procedure
+            objCommand.SelectCommand.CommandType = CommandType.StoredProcedure
 
-        Return intEmpType
+            'Add parameters to stored procedure
+            Dim index As Integer = 0
+            For Each paramName As String In aryParamNames
+                objCommand.SelectCommand.Parameters.Add(New SqlParameter(CStr(aryParamNames(index)), CStr(aryParamValues(index))))
+                index = index + 1
+            Next
+
+            ' OPEN CONNECTION AND RUN INSERT/UPDATE QUERY
+            objCommand.SelectCommand.Connection = objConnection
+            objConnection.Open()
+            objCommand.SelectCommand.ExecuteNonQuery()
+            objConnection.Close()
+
+            'Print out each element of our arraylists if error occured
+        Catch ex As Exception
+            Dim strError As String = ""
+            Dim index As Integer = 0
+            For Each paramName As String In aryParamNames
+                strError = strError & "ParamName: " & CStr(aryParamNames(index))
+                strError = strError & " ParamValue: " & CStr(aryParamValues(index))
+                index = index + 1
+            Next
+            Throw New Exception(strError & " error message is " & ex.Message)
+        End Try
+    End Sub
+
+    Public Function GetCustomerNumber(intCustomerNumber As Integer) As Integer
+
+        intCustomerNumber = CInt(mDatasetCustomer.Tables("tblCustomers").Rows(0).Item("Email"))
+
+        Return intCustomerNumber
     End Function
 End Class
