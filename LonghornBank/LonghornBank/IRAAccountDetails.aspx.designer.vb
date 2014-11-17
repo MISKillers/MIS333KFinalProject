@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Transfer
+Partial Public Class IRAAccountDetails
 
     '''<summary>
     '''form1 control.
@@ -23,22 +23,58 @@ Partial Public Class Transfer
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''ddlTransferFrom control.
+    '''txtDescription control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlTransferFrom As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtDescription As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ddlTransferTo control.
+    '''ddlTransferType control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlTransferTo As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlTransferType As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''radPriceSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents radPriceSearch As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''txtPriceLower control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPriceLower As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtPriceUpper control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPriceUpper As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtTransNumber control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtTransNumber As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Calendar1 control.
@@ -50,20 +86,20 @@ Partial Public Class Transfer
     Protected WithEvents Calendar1 As Global.System.Web.UI.WebControls.Calendar
 
     '''<summary>
-    '''txtTransferAmount control.
+    '''btnSearch control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtTransferAmount As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btnMakeTransfer control.
+    '''GridView1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnMakeTransfer As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 End Class
