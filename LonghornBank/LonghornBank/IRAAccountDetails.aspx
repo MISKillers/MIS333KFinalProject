@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <label for="IRAAccountDetails" style="font-size: 22px">IRA Account Details</label><br />
+        <label for="IRAAccountDetails" style="font-size: 22px" width:"500px">IRA Account Details</label><br />
         <br />
         
         <label for="Search">Search By:</label><br />
