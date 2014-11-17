@@ -194,6 +194,7 @@
     <Compile Include="ClassCustomerDB.vb" />
     <Compile Include="ClassEmployeeDB.vb" />
     <Compile Include="ClassFormat.vb" />
+    <Compile Include="ClassTransactionsDB.vb" />
     <Compile Include="ClassValidation.vb" />
     <Compile Include="CustomerMaster.Master.designer.vb">
       <DependentUpon>CustomerMaster.Master</DependentUpon>
